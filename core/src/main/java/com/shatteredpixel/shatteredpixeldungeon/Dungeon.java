@@ -235,13 +235,13 @@ public class Dungeon {
 		depth = 1;
 		branch = 0;
 
-		gold = 0;
+		gold = 10000;
 		cycle = 0;
 		Bbat.level = 1;
 		respawn_timer = 50;
 		additionalMobs = 0;
 		fireDamage = 1;
-		luck = 1;
+		luck = 100;
 		energy = 0;
 
 		droppedItems = new SparseArray<>();
@@ -424,7 +424,7 @@ public class Dungeon {
 	}
 	
 	public static boolean shopOnLevel() {
-		return depth == 6 || depth == 11 || depth == 16;
+		return depth == 1 || depth == 6 || depth == 11 || depth == 16;
 	}
 	
 	public static boolean bossLevel() {
