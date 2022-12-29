@@ -34,6 +34,7 @@ import com.shatteredpixel.shatteredpixeldungeon.items.potions.*;
 import com.shatteredpixel.shatteredpixeldungeon.items.potions.elixirs.ElixirOfMight;
 import com.shatteredpixel.shatteredpixeldungeon.items.rings.*;
 import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.*;
+import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.exotic.*;
 import com.shatteredpixel.shatteredpixeldungeon.items.stones.*;
 import com.shatteredpixel.shatteredpixeldungeon.items.wands.*;
 import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.*;
@@ -79,6 +80,7 @@ public class Generator {
 		STONE   ( 1, 1, Runestone.class),
 		
 		GOLD	( 10, 10,   Gold.class );
+		EXSCROLL	( 10, 10,   ExoticScroll.class );
 		
 		public Class<?>[] classes;
 
@@ -170,6 +172,25 @@ public class Generator {
 			};
 			SCROLL.defaultProbs = new float[]{ 0, 6, 4, 3, 3, 3, 2, 2, 2, 2, 2, 1 };
 			SCROLL.probs = SCROLL.defaultProbs.clone();
+			
+			EXSCROLL.classes = new Class<?>[]{
+				ScrollOfAntiMagic.class,
+				ScrollOfChallenge.class,
+				ScrollOfConfusion.class,
+				ScrollOfDivination.class,
+				ScrollOfDread.class,
+				ScrollOfEnchantment.class,
+				ScrollOfForesight.class,
+				ScrollOfMetamorphosis.class,
+				ScrollOfMysticalEnergy.class,
+				ScrollOfPassage.class,
+				ScrollOfPolymorph.class,
+				ScrollOfPrismaticImage.class,
+				ScrollOfPsionicBlast.class,
+				ScrollOfSirensSong.class
+			};
+			EXSCROLL.defaultProbs = new float[]{ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
+			EXSCROLL.probs = EXSCROLL.defaultProbs.clone();
 			
 			STONE.classes = new Class<?>[]{
 					StoneOfEnchantment.class,   //1 is guaranteed to drop on floors 6-19
